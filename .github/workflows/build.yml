@@ -1,0 +1,37 @@
+name: Build
+on: [push, pull_request]
+jobs:
+  build-ios:
+    name: build-ios
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Install pods
+        run: cd ios && pod install
+      - name: Build
+        run: cd ios && xcodebuild -workspace reactNativeApp.xcworkspace -configuration Debug -scheme reactNativeApp -arch x86_64
+  build-android:
+    name: build-android
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - name: Install modules
+        run: yarn
+      - name: Build
+        run: cd android && ./gradlew assembleDebug
+  build-web:
+    name: build-web
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Build
+        run: yarn web:build

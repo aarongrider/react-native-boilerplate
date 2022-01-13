@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon-play</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Messaging" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Messages" transform="translate(-291.000000, -164.000000)">
+            <g id="kit-icons/play" transform="translate(291.000000, 164.000000)">
+                <path d="M16.2435349,8.91467092 C17.1973771,9.51411217 17.1995979,10.4846028 16.2435349,11.0854397 L5.72708418,17.694493 C4.77324192,18.2939342 4,17.860518 4,16.7484089 L4,3.25170176 C4,2.12975267 4.77102115,1.70478072 5.72708418,2.30561761 L16.2435349,8.91467092 Z" id="play"></path>
+            </g>
+        </g>
+    </g>
+</svg>

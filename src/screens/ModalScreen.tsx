@@ -1,0 +1,48 @@
+import React from 'react';
+import {Image, StyleSheet, View} from 'react-native';
+
+import Button from '../components/Button';
+import Card from '../components/Card';
+import Spacer from '../components/Spacer';
+import Text from '../components/Text';
+
+const ModalScreen = ({navigation}: {navigation: any}) => {
+  return (
+    <View style={styles.container}>
+      <Card>
+        <Text h1>Modal</Text>
+        <Spacer s />
+        <Text h2>Presentation Style</Text>
+      </Card>
+      <Spacer m />
+      <Card fullBleed>
+        <Image
+          style={{width: '100%', height: 300}}
+          source={{
+            uri: 'https://images.unsplash.com/photo-1594114702404-7a9142c04afa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8&auto=format&fit=crop&w=700&q=60',
+          }}
+        />
+      </Card>
+      <Spacer m />
+      <Button
+        onPress={() => navigation.goBack()}
+        style={styles.button}
+        title="Dismiss"
+      />
+    </View>
+  );
+};
+
+export default ModalScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    width: '100%',
+  },
+});
