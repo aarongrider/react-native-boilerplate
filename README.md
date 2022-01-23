@@ -10,6 +10,9 @@ A barebones, minimal React Native project with the following support:
 - SVGs
 - Github Actions
 
+Try out the web version here:
+https://wonderful-poitras-6650b3.netlify.app/
+
 ![Demo](demo.gif)
 
 ## FAQ
