@@ -6,6 +6,7 @@ import Card from '../components/Card';
 import Loader from '../components/Loader';
 import Spacer from '../components/Spacer';
 import Text from '../components/Text';
+import {NavRoutes} from '../navigation/NavRoutes';
 
 const DetailScreen = ({navigation}: {navigation: any}) => {
   return (
@@ -30,7 +31,7 @@ const DetailScreen = ({navigation}: {navigation: any}) => {
       <Button
         title="Go To Home Tab"
         style={styles.button}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate(NavRoutes.FirstTab)}
       />
       <Spacer />
     </ScrollView>

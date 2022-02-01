@@ -8,6 +8,7 @@ import Spacer from '../components/Spacer';
 import Spacing from '../components/Spacing';
 import Text from '../components/Text';
 import {Constants} from '../Constants';
+import {NavRoutes} from '../navigation/NavRoutes';
 
 const HomeScreen = ({navigation}: {navigation: any}) => {
   return (
@@ -49,6 +50,12 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
             </View>
           </View>
         </Card>
+        <Spacer />
+        <Button
+          title="Display Modal"
+          style={styles.button}
+          onPress={() => navigation.navigate(NavRoutes.Modal)}
+        />
         <Spacer />
         <Card fullBleed>
           <View
@@ -92,19 +99,7 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
             }}
           />
         </Card>
-        <Spacer />
-        <Button
-          title="Push Info Screen"
-          style={styles.button}
-          onPress={() => navigation.push('Info')}
-        />
         <Spacer m />
-        <Button
-          title="Push Animated Screen"
-          style={styles.button}
-          onPress={() => navigation.push('Animated')}
-        />
-        <Spacer />
         <Card>
           <Text h1 style={{marginBottom: 4}}>
             Lorem Ipsum
@@ -134,15 +129,9 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
         </Card>
         <Spacer />
         <Button
-          title="Go To Details Tab"
+          title="Go To Second Tab"
           style={styles.button}
-          onPress={() => navigation.navigate('Details')}
-        />
-        <Spacer m />
-        <Button
-          title="Display Modal"
-          style={styles.button}
-          onPress={() => navigation.navigate('Modal')}
+          onPress={() => navigation.navigate(NavRoutes.SecondTab)}
         />
       </View>
       <Spacer />

@@ -26,8 +26,8 @@ const Button = (props: Props) => {
         android_ripple={{color: colors.hovered}}
         style={({hovered, focused, pressed}) => [
           styles.baseContainer,
-          {backgroundColor: colors.card},
-          hovered && {backgroundColor: colors.hovered},
+          {backgroundColor: colors.card, borderColor: colors.hovered},
+          hovered && {backgroundColor: colors.pressed},
           pressed && [styles.buttonPressed, {backgroundColor: colors.pressed}],
         ]}>
         <Text style={styles.text}>{props.title}</Text>
@@ -42,22 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignContent: 'center',
     justifyContent: 'center',
-    shadowColor: '#000000',
-    shadowRadius: 10,
-    shadowOpacity: 0.1,
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-  },
-  buttonPressed: {
-    shadowColor: '#000000',
-    shadowRadius: 3,
-    shadowOpacity: 0.1,
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
+    borderWidth: 0.2,
   },
   text: {
     fontSize: 15,

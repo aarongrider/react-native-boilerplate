@@ -1,4 +1,4 @@
-package com.blocks;
+package com.reactNativeApp;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

@@ -11,6 +11,7 @@ import {Theme} from '../components/Themes';
 import Text from '../components/Text';
 import {Constants} from '../Constants';
 import Palette from '../components/Palette';
+import {NavRoutes} from './NavRoutes';
 
 export const TabBar = ({
   state,
@@ -43,18 +44,23 @@ export const TabBar = ({
     };
 
     let iconName = 'bolt';
+    let title = 'tab';
     switch (label) {
-      case 'Home':
+      case NavRoutes.FirstTab:
         iconName = 'play';
+        title = 'First';
         break;
-      case 'Details':
+      case NavRoutes.SecondTab:
         iconName = 'settings';
+        title = 'Second';
         break;
-      case 'Calendar':
+      case NavRoutes.ThirdTab:
         iconName = 'camera';
+        title = 'Third';
         break;
-      case 'More':
+      case NavRoutes.FourthTab:
         iconName = 'listen';
+        title = 'Fourth';
         break;
       default:
         break;
@@ -90,7 +96,7 @@ export const TabBar = ({
                 fontWeight: '500',
                 color: isFocused ? colors.text : colors.inactive,
               }}>
-              {label}
+              {title}
             </Text>
           )}
         </Pressable>
@@ -100,10 +106,6 @@ export const TabBar = ({
               width: '100%',
               height: 3,
               backgroundColor: isFocused ? colors.text : 'transparent',
-              shadowColor: Palette.white,
-              shadowOpacity: isFocused ? 1 : 0,
-              shadowRadius: 3,
-              shadowOffset: {width: 0, height: 0},
             }}
           />
         )}
