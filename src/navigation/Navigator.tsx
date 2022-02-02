@@ -34,6 +34,12 @@ const getHeaderProps = (theme: Theme, route: string) => {
   };
 };
 
+const forFade = ({current}) => ({
+  cardStyle: {
+    opacity: current.progress,
+  },
+});
+
 const RootStack = createStackNavigator();
 const Tabs = createTabNavigator();
 const TopTabs = createMaterialTopTabNavigator();
@@ -65,7 +71,12 @@ const modalStackPresentationOptions = Platform.select({
     headerHideShadow: true,
     headerShown: false,
   },
-  web: {headerShown: false},
+  web: {
+    presentation: 'transparentModal',
+    headerShown: false,
+    cardStyleInterpolator: forFade,
+    cardStyle: {},
+  },
 });
 
 const FirstTab = () => {

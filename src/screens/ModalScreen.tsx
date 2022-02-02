@@ -9,7 +9,7 @@ import Text from '../components/Text';
 
 const ModalScreen = ({navigation}: {navigation: any}) => {
   return (
-    <Page>
+    <Page modal>
       <Card>
         <Text h1>Modal</Text>
         <Spacer s />
