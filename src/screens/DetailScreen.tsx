@@ -1,16 +1,17 @@
 import React from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Loader from '../components/Loader';
+import Page from '../components/Page';
 import Spacer from '../components/Spacer';
 import Text from '../components/Text';
 import {NavRoutes} from '../navigation/NavRoutes';
 
 const DetailScreen = ({navigation}: {navigation: any}) => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <Page>
       <Spacer />
       <Card>
         <Loader />
@@ -34,19 +35,13 @@ const DetailScreen = ({navigation}: {navigation: any}) => {
         onPress={() => navigation.navigate(NavRoutes.FirstTab)}
       />
       <Spacer />
-    </ScrollView>
+    </Page>
   );
 };
 
 export default DetailScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 24,
-  },
   button: {
     width: '100%',
     marginVertical: 16,

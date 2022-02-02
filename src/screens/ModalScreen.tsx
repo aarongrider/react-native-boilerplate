@@ -1,14 +1,15 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 
 import Button from '../components/Button';
 import Card from '../components/Card';
+import Page from '../components/Page';
 import Spacer from '../components/Spacer';
 import Text from '../components/Text';
 
 const ModalScreen = ({navigation}: {navigation: any}) => {
   return (
-    <View style={styles.container}>
+    <Page>
       <Card>
         <Text h1>Modal</Text>
         <Spacer s />
@@ -29,19 +30,13 @@ const ModalScreen = ({navigation}: {navigation: any}) => {
         style={styles.button}
         title="Dismiss"
       />
-    </View>
+    </Page>
   );
 };
 
 export default ModalScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   button: {
     width: '100%',
   },

@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
 import Text from '../components/Text';
 import Spacer from '../components/Spacer';
+import Page from '../components/Page';
 
 const InfoScreen = () => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <Page>
       <Text h2>This is a very long page of information</Text>
       <Spacer />
       <Text p>
@@ -44,14 +44,8 @@ const InfoScreen = () => {
         eleifend, sem ligula blandit neque, sed hendrerit metus massa
         sollicitudin risus. Nulla non odio mi.
       </Text>
-    </ScrollView>
+    </Page>
   );
 };
 
 export default InfoScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 24,
-  },
-});
