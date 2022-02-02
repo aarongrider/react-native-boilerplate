@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform} from 'react-native';
+import {Platform, useWindowDimensions} from 'react-native';
 
 import {createStackNavigator} from './NavigationUtils';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -13,6 +13,7 @@ import AnimatedScreen from '../screens/AnimatedScreen';
 import PressableIcon from '../components/PressableIcon';
 import {createTabNavigator} from './TabNavigator';
 import {NavRoutes} from './NavRoutes';
+import {Constants} from '../Constants';
 
 const getHeaderProps = (theme: Theme, route: string) => {
   return {
@@ -59,25 +60,6 @@ const NavigationTabs = () => {
     </Tabs.Navigator>
   );
 };
-
-const modalStackPresentationOptions = Platform.select({
-  ios: {
-    presentation: 'formSheet',
-    headerHideShadow: true,
-    headerShown: false,
-  },
-  android: {
-    stackPresentation: 'modal',
-    headerHideShadow: true,
-    headerShown: false,
-  },
-  web: {
-    presentation: 'transparentModal',
-    headerShown: false,
-    cardStyleInterpolator: forFade,
-    cardStyle: {},
-  },
-});
 
 const FirstTab = () => {
   const theme = useTheme() as Theme;
@@ -149,8 +131,28 @@ const FourthTabTopTabs = () => {
 };
 
 export const RootStackScreen = () => {
+  const {width} = useWindowDimensions();
   return (
-    <RootStack.Navigator screenOptions={modalStackPresentationOptions}>
+    <RootStack.Navigator
+      screenOptions={Platform.select({
+        ios: {
+          presentation: 'formSheet',
+          headerHideShadow: true,
+          headerShown: false,
+        },
+        android: {
+          stackPresentation: 'modal',
+          headerHideShadow: true,
+          headerShown: false,
+        },
+        web: {
+          presentation:
+            width > Constants.maxWidth ? 'transparentModal' : 'modal',
+          headerShown: false,
+          cardStyleInterpolator: forFade,
+          cardStyle: {},
+        },
+      })}>
       <RootStack.Screen
         name={NavRoutes.Main}
         component={NavigationTabs}

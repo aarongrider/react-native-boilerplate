@@ -1,6 +1,6 @@
 import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
-import {Platform, ScrollView, StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, useWindowDimensions, View} from 'react-native';
 import {Constants} from '../Constants';
 
 type Props = {
@@ -10,8 +10,9 @@ type Props = {
 
 const Page = (props: Props) => {
   const {colors} = useTheme() as Theme;
+  const {width} = useWindowDimensions();
 
-  if (props.modal === true && Platform.OS === 'web') {
+  if (props.modal && width > Constants.maxWidth) {
     return (
       <View style={styles.webContainer}>
         <View style={[styles.webContent, {backgroundColor: colors.background}]}>
@@ -20,6 +21,7 @@ const Page = (props: Props) => {
       </View>
     );
   }
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.content}>{props.children}</View>
