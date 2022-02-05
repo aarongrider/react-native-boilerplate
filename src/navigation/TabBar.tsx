@@ -1,6 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, SafeAreaView, Platform} from 'react-native';
-import {Pressable} from 'react-native-web-hover';
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  Platform,
+  Pressable,
+} from 'react-native';
 import {
   BottomTabBarOptions,
   BottomTabBarProps,
@@ -10,7 +15,6 @@ import {useTheme} from '@react-navigation/native';
 import {Theme} from '../components/Themes';
 import Text from '../components/Text';
 import {Constants} from '../Constants';
-import Palette from '../components/Palette';
 import {NavRoutes} from './NavRoutes';
 
 export const TabBar = ({
@@ -104,7 +108,7 @@ export const TabBar = ({
           <View
             style={{
               width: '100%',
-              height: 3,
+              height: 2,
               backgroundColor: isFocused ? colors.text : 'transparent',
             }}
           />

@@ -123,6 +123,11 @@ const FourthTabTopTabs = () => {
     <TopTabs.Navigator
       screenOptions={{
         tabBarIndicatorStyle: {backgroundColor: theme.colors.text},
+        tabBarLabelStyle: {
+          textTransform: undefined,
+          fontSize: 16,
+          fontWeight: '500',
+        },
       }}>
       <TopTabs.Screen name="Info" component={InfoScreen} />
       <TopTabs.Screen name="Details" component={DetailScreen} />

@@ -14,8 +14,12 @@ const Page = (props: Props) => {
 
   if (props.modal && width > Constants.maxWidth) {
     return (
-      <View style={styles.webContainer}>
-        <View style={[styles.webContent, {backgroundColor: colors.background}]}>
+      <View style={styles.webOverlay}>
+        <View
+          style={[
+            styles.webContent,
+            {backgroundColor: colors.background, borderColor: colors.hovered},
+          ]}>
           {props.children}
         </View>
       </View>
@@ -46,7 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingBottom: 36,
   },
-  webContainer: {
+  webOverlay: {
     width: '100%',
     height: '100%',
     alignContent: 'center',
@@ -56,10 +60,11 @@ const styles = StyleSheet.create({
   },
   webContent: {
     width: '80%',
-    backgroundColor: 'red',
     padding: 64,
+    borderWidth: 0.2,
+    borderColor: 'red',
     borderRadius: 10,
-    maxWidth: Constants.maxWidth,
+    maxWidth: Constants.maxWidth - 20,
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',

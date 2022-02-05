@@ -6,8 +6,8 @@ import {
   StyleSheet,
   ViewStyle,
   View,
+  Pressable,
 } from 'react-native';
-import {Pressable} from 'react-native-web-hover';
 import Text from './Text';
 import {Theme} from './Themes';
 

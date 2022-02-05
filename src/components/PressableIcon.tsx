@@ -1,9 +1,13 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import {GestureResponderEvent, StyleSheet, View, ViewStyle} from 'react-native';
-import {Pressable} from 'react-native-web-hover';
+import {
+  GestureResponderEvent,
+  StyleSheet,
+  View,
+  ViewStyle,
+  Pressable,
+} from 'react-native';
 import Icon, {IconNames} from './Icon';
-import Text from './Text';
 import {Theme} from './Themes';
 
 type Props = {

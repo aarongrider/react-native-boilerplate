@@ -20,19 +20,13 @@ const Card = (props: Props) => {
         style={[
           styles.container,
           {
+            overflow: 'hidden',
             backgroundColor: colors.card,
             borderRadius: Spacing.borderRadius,
             padding: props.fullBleed ? 0 : Spacing.l,
           },
         ]}>
-        <View
-          style={{
-            overflow: 'hidden',
-            borderRadius: Spacing.borderRadius,
-            backgroundColor: colors.card,
-          }}>
-          {props.children}
-        </View>
+        {props.children}
       </View>
     );
   };
