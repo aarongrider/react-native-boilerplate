@@ -13,7 +13,7 @@ import {NavRoutes} from '../navigation/NavRoutes';
 const HomeScreen = ({navigation}: {navigation: any}) => {
   return (
     <Page>
-      <Spacer />
+      <Spacer s />
       <Card
         fullBleed
         onPress={() => {
