@@ -11,7 +11,6 @@ import Text from '../components/Text';
 const DetailScreen = ({navigation}: {navigation: any}) => {
   return (
     <Page>
-      <Spacer />
       <Card>
         <Loader />
       </Card>
