@@ -67,6 +67,10 @@ const FirstTab = () => {
   return (
     <FirstTabStack.Navigator screenOptions={getHeaderProps(theme, route.name)}>
       <FirstTabStack.Screen name={NavRoutes.Discover} component={HomeScreen} />
+      <FirstTabStack.Screen
+        name={NavRoutes.ItemDetails}
+        component={DetailScreen}
+      />
     </FirstTabStack.Navigator>
   );
 };

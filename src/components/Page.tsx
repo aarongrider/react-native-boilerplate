@@ -27,7 +27,9 @@ const Page = (props: Props) => {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView
+      contentContainerStyle={styles.container}
+      contentInsetAdjustmentBehavior="automatic">
       <View style={styles.content}>{props.children}</View>
     </ScrollView>
   );

@@ -17,7 +17,7 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
       <Card
         fullBleed
         onPress={() => {
-          console.log('Test');
+          navigation.navigate(NavRoutes.ItemDetails);
         }}>
         <View
           style={{

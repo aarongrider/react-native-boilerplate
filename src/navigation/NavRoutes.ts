@@ -13,5 +13,6 @@ export enum NavRoutes {
   Discover = 'Discover',
   Animated = 'Animated',
   Details = 'Details',
+  ItemDetails = 'ItemDetails',
   Info = 'Info',
 }

@@ -7,7 +7,6 @@ import Loader from '../components/Loader';
 import Page from '../components/Page';
 import Spacer from '../components/Spacer';
 import Text from '../components/Text';
-import {NavRoutes} from '../navigation/NavRoutes';
 
 const DetailScreen = ({navigation}: {navigation: any}) => {
   return (
@@ -30,9 +29,9 @@ const DetailScreen = ({navigation}: {navigation: any}) => {
         </Text>
       </Card>
       <Button
-        title="Go To Home Tab"
+        title="Go Back"
         style={styles.button}
-        onPress={() => navigation.navigate(NavRoutes.FirstTab)}
+        onPress={() => navigation.goBack()}
       />
       <Spacer />
     </Page>
