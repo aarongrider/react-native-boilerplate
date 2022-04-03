@@ -4,7 +4,6 @@ import {Platform, useWindowDimensions} from 'react-native';
 import {createStackNavigator} from './NavigationUtils';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import ModalScreen from '../screens/ModalScreen';
-import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
 import InfoScreen from '../screens/InfoScreen';
 import {useRoute, useTheme} from '@react-navigation/native';
@@ -14,6 +13,7 @@ import PressableIcon from '../components/PressableIcon';
 import {createTabNavigator} from './TabNavigator';
 import {NavRoutes} from './NavRoutes';
 import {Constants} from '../Constants';
+import DraggableScreen from '../screens/DraggableScreen';
 
 const getHeaderProps = (theme: Theme, route: string) => {
   return {
@@ -66,7 +66,10 @@ const FirstTab = () => {
   const route = useRoute();
   return (
     <FirstTabStack.Navigator screenOptions={getHeaderProps(theme, route.name)}>
-      <FirstTabStack.Screen name={NavRoutes.Discover} component={HomeScreen} />
+      <FirstTabStack.Screen
+        name={NavRoutes.Discover}
+        component={DraggableScreen}
+      />
       <FirstTabStack.Screen
         name={NavRoutes.ItemDetails}
         component={DetailScreen}

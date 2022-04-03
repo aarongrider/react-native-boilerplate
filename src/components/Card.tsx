@@ -9,6 +9,7 @@ type Props = {
   fullBleed?: boolean;
   children?: any;
   onPress?: () => void;
+  onLongPress?: () => void;
 };
 
 const Card = (props: Props) => {
@@ -33,7 +34,10 @@ const Card = (props: Props) => {
 
   if (props.onPress) {
     return (
-      <ScalePressable onPress={props.onPress} style={{width: '100%'}}>
+      <ScalePressable
+        onPress={props.onPress}
+        onLongPress={props.onLongPress}
+        style={{width: '100%'}}>
         {renderCard()}
       </ScalePressable>
     );

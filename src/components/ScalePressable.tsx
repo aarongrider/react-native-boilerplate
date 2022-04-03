@@ -3,12 +3,13 @@ import {Animated, ViewStyle, Pressable, View} from 'react-native';
 
 type Props = {
   style?: ViewStyle;
-  onPress: () => void;
+  onPress?: () => void;
+  onLongPress?: () => void;
   children: any;
 };
 
 const ScalePressable = (props: Props) => {
-  const {style, children, onPress} = props;
+  const {style, children, onPress, onLongPress} = props;
 
   const [scaleInAnimated] = useState(new Animated.Value(0));
 
@@ -16,6 +17,7 @@ const ScalePressable = (props: Props) => {
     <View style={style}>
       <Pressable
         onPress={onPress}
+        onLongPress={onLongPress}
         onPressIn={() => {
           Scale.pressInAnimation(scaleInAnimated);
         }}

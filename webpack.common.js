@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
@@ -8,7 +9,7 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
-  entry: path.join(__dirname, 'index.web.js'),
+  entry: ['babel-polyfill', path.join(__dirname, 'index.web.js')],
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '/build'),
@@ -74,5 +75,11 @@ module.exports = {
       },
     ],
   },
-  plugins: [HTMLWebpackPluginConfig],
+  plugins: [
+    HTMLWebpackPluginConfig,
+    new webpack.DefinePlugin({
+      process: {env: {}},
+      __DEV__: process.env,
+    }),
+  ],
 };
